@@ -35,4 +35,25 @@ describe("#wordSearch()", function() {
 
     assert.isTrue(result);
   });
+
+  it("should return true if the word is present (horizontally)", function() {
+    const result = wordSearch([
+      ['A', 'W', 'C', 'F', 'E', 'U', 'A', 'L'],
+      ['S', 'E', 'I', 'N', 'A', 'E', 'L', 'D'],
+      ['Y', 'F', 'C', 'F', 'V', 'U', 'A', 'L'],
+      ['H', 'M', 'J', 'T', 'E', 'V', 'R', 'G'],
+      ['W', 'H', 'C', 'S', 'S', 'E', 'R', 'L'],
+      ['B', 'F', 'R', 'E', 'D', 'E', 'Y', 'B'],
+      ['U', 'B', 'T', 'W', 'R', 'P', 'A', 'I'],
+      ['O', 'D', 'C', 'A', 'O', 'U', 'A', 'S'],
+      ['E', 'Z', 'K', 'F', 'P', 'U', 'A', 'L'],
+    ], 'EAVESDROP')
+
+    assert.isTrue(result);
+  });
+
+  it("should return 'not possible to look for a word in an empty matrix'", function() {
+    const result = wordSearch([], 'HAPPINESS')
+  })
+
 });
